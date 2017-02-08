@@ -42,6 +42,7 @@ public class ParallaxListView extends ListView {
             @Override
             public void onGlobalLayout() {
                 originHeight = imageView.getHeight();
+                //当图片高度比imageview的高度小时，最大的高度为imageview控件高度的2倍，否则为图片的高度
                 maxHeight = (originHeight > imageHeight ? originHeight * 2 : imageHeight);
                 imageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
